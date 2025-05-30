@@ -10,6 +10,7 @@
     <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
 
 
     <!-- Indica que el dispositivo no requiere obligatoriamente hardware de telefonía -->
@@ -47,6 +48,10 @@
                 <action android:name="android.provider.Telephony.SMS_RECEIVED" />
             </intent-filter>
         </receiver>
+        <receiver
+            android:name=".StopServiceReceiver"
+            android:exported="true"/>
+
 
         <!-- Servicio de alarma -->
         <service
